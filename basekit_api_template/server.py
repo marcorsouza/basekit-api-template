@@ -2,7 +2,7 @@ import inspect
 import os
 from flask import Flask
 from basekit_api_template.core_lib.route_loader import load_routes
-from basekit_api_template.core_lib.swagger_config import swagger_init_app
+from basekit_core_lib.config.swagger_config import swagger_init_app
 from basekit_api_template.core_lib.app_container import AppContainer
 from basekit_core_lib.server_base import ServerBase
 
@@ -16,4 +16,4 @@ class Server(ServerBase):
         load_routes(self.blue_print, container)
         
     def swagger_init_app(self):
-        swagger_init_app(self.app)
+        swagger_init_app(self.app,'BKT Blog',1,'Este é um blog desenvolvimento baseado no BaseKit Template!')
