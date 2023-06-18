@@ -4,6 +4,7 @@ import os
 from basekit_api_template.core_lib.app_container import AppContainer
 from basekit_core_lib.config.helpers import config
 from basekit_core_lib.utils.file_utils import get_attribute, get_files, get_filename, get_import_module
+from basekit_core_lib.utils.add_login_routes import add_login_routes
 
 def load_routes(app, app_container : AppContainer = None):
     
@@ -24,6 +25,8 @@ def load_routes(app, app_container : AppContainer = None):
         blueprint = get_attribute(module, filename)
         list_modules.append(module)
         app.register_blueprint(blueprint) # registra o blueprint da rota no blueprint api  
+        
+    add_login_routes(app)
                            
     if len(list_modules) > 0:
         app_container.wire(modules=list_modules) # carrega o modulo que será injetado

@@ -20,9 +20,7 @@ class Server:
         self.app.secret_key = self.config.SECRET_KEY
         self.app.config['JWT_SECRET_KEY'] = self.config.SECRET_KEY # Defina sua chave secreta
         JWTManager(self.app)
-        
-        
-             
+                     
         self.configure_routes()
         self.app.register_blueprint(self.blue_print)
         
