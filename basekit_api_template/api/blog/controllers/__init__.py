@@ -1,0 +1,1 @@
+from basekit_api_template.api.blog.controllers.post_controller import PostController

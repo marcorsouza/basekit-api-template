@@ -1,0 +1,1 @@
+from basekit_api_template.api.blog.schemas.post_schema import PostSchema
