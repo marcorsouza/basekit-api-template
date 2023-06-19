@@ -8,7 +8,6 @@ from basekit_api_template.core_lib.app_container import AppContainer
 from basekit_core_lib.api.middlewares.exception_middleware import handle_exceptions
 
 post_routes = Blueprint('post_routes', __name__,url_prefix='blog')
-
 @post_routes.route('/posts', methods=['GET'])
 @jwt_required()
 @inject
